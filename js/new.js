@@ -106,10 +106,16 @@ var octopus = {
     save : function() {
 
         var currentCat = octopus.getCurrentCat();
-        var name = this.catNameElem.value;
-        var url = this.catURLElem.value;
-        var clickCount = this.countElem.value;
+        var name = document.getElementById('catName').value;
+        var url = document.getElementById('catURL').value;
+        var clickCount = document.getElementById('counter').value;
+        model.currentCat.name = name;
+        model.currentCat.imgSrc = url;
+        model.currentCat.clickCount = clickCount;
+        catListView.render();
+        octopus.cancel();
     }
+
 };
 
 /* ========= View ======== */
