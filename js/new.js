@@ -65,6 +65,7 @@ var octopus = {
         // tell our views to initialize
         catListView.init();
         catView.init();
+        adminView.init();
 
     },
 
@@ -84,6 +85,15 @@ var octopus = {
     incrementCounter: function() {
         model.currentCat.clickCount++;
         catView.render();
+    },
+
+    toggleAdmin : function() {
+        var adminArea = document.getElementById('adminArea');
+        if (adminArea.style.display === 'none') {
+            adminArea.style.display = 'block';
+        } else {
+            adminArea.style.display = 'none';
+        }
     }
 };
 
@@ -157,6 +167,14 @@ var catListView = {
         };
     }
 };
+
+var adminView = {
+    init: function() {
+        var adminArea = document.getElementById('adminArea');
+        adminArea.style.display = 'none';
+
+    }
+}
 
 // make it go
 

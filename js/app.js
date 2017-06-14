@@ -15,8 +15,6 @@
       var catClicks = [];
       var currentCat = -1;
 
-
-
       // push images to the array
       images.push(createImage("images/blackie.jpg", "Blackie"));
       images.push(createImage("images/catpedo.jpg", "Catpedo"));
