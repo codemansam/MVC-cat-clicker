@@ -96,7 +96,11 @@ var octopus = {
         } else {
             adminArea.style.display = 'none';
         }
+    },
 
+    cancel : function() {
+        var adminArea = document.getElementById('adminArea');
+        adminArea.style.display = 'none';
     }
 };
 
@@ -191,8 +195,8 @@ var adminView = {
         this.catURLElem.value = currentCat.imgSrc;
         this.countElem.value = currentCat.clickCount;
 
-
     }
+
 }
 
 // make it go
