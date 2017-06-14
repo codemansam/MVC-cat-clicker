@@ -94,6 +94,7 @@ var octopus = {
         } else {
             adminArea.style.display = 'none';
         }
+        adminView.render();
     }
 };
 
@@ -170,8 +171,24 @@ var catListView = {
 
 var adminView = {
     init: function() {
+
         var adminArea = document.getElementById('adminArea');
         adminArea.style.display = 'none';
+
+        // store pointers to our DOM elements for easy access later
+        this.catNameElem = document.getElementById('catName');
+        this.catURLElem = document.getElementById('catURL');
+        this.countElem = document.getElementById('counter');
+
+    },
+
+    render: function() {
+
+        var currentCat = octopus.getCurrentCat();
+        this.catNameElem.value = currentCat.name;
+        this.catURLElem.value = currentCat.imgSrc;
+        this.countElem.value = currentCat.clickCount;
+
 
     }
 }
