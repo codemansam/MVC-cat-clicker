@@ -106,9 +106,9 @@ var octopus = {
     save : function() {
 
         var currentCat = octopus.getCurrentCat();
-        currentCat.name = this.catNameElem.value;
-        currentCat.imgSRC = this.catURLElem.value;
-        currentCat.clickCount = this.countElem.value;
+        var name = this.catNameElem.value;
+        var url = this.catURLElem.value;
+        var clickCount = this.countElem.value;
     }
 };
 
@@ -187,6 +187,7 @@ var catListView = {
 var adminView = {
     init: function() {
 
+        // selects the admin area DOM elements and makes sure it isn't displayed
         var adminArea = document.getElementById('adminArea');
         adminArea.style.display = 'none';
 
@@ -199,14 +200,15 @@ var adminView = {
 
     render: function() {
 
+        // gets the current Cat
         var currentCat = octopus.getCurrentCat();
+
+        // sets the current Cat values into the admin text fields
         this.catNameElem.value = currentCat.name;
         this.catURLElem.value = currentCat.imgSrc;
         this.countElem.value = currentCat.clickCount;
     }
 
 }
-
-// make it go
 
 octopus.init();
