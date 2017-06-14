@@ -85,16 +85,18 @@ var octopus = {
     incrementCounter: function() {
         model.currentCat.clickCount++;
         catView.render();
+        adminView.render();
     },
 
     toggleAdmin : function() {
         var adminArea = document.getElementById('adminArea');
         if (adminArea.style.display === 'none') {
             adminArea.style.display = 'block';
+            adminView.render();
         } else {
             adminArea.style.display = 'none';
         }
-        adminView.render();
+
     }
 };
 
